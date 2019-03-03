@@ -87,7 +87,7 @@
 				
 				<div id="menu-1" class="homepage home-section text-center">
 					<div class="welcome-text" >
-						<h2 style="font-family: STKaiti ;">Hello, World !<strong>Wish U Happiness</strong></h2>
+						<h2 style="font-family: STKaiti ;">Hello, World !<strong></strong></h2>
 						<p style="font-family: STKaiti ;"><span class="text-muted">有田不耕仓禀虚, 有书不读子孙愚</span></p>
 						<p style="font-family: STKaiti ;"><span class="text-info">宝剑锋从磨砺出, 梅花香自苦寒来</span></p>
 						<p style="font-family: STKaiti ;"><span class="text-success">少壮不经勤学苦, 老来方悔读书迟</span></p>
@@ -269,37 +269,59 @@
 						<div class="col-md-6 col-sm-6">
 							<div class="box-content">
 								<h3 class="widget-title">留言</h3>
-								<form class="contact-form">
+								<form class="contact-form" id="sendForm">
 									<fieldset>
-										<input type="text" class="name" id="name" placeholder="昵称...">
+										<input type="text" class="name" name="name" id="name" placeholder="昵称...">
 									</fieldset> 
 									<fieldset>
-										<input type="email" class="email" id="email" placeholder="邮箱...">
+										<input type="email" class="email" name="email" id="email" placeholder="邮箱...">
 									</fieldset> 
 									<fieldset>
-										<input type="text" class="subject" id="subject" placeholder="标题...">
+										<input type="text" class="subject" name="title" id="subject" placeholder="标题...">
 									</fieldset>
 									<fieldset>
-										<textarea name="message" id="message" cols="30" rows="4" placeholder="留言信息.."></textarea>
+										<textarea id="message" name="content"  cols="30" rows="4" placeholder="留言信息.."></textarea>
 									</fieldset>
-									<fieldset>
-										<input type="submit" class="button" id="button" value="发送">
+									<fieldset>	
+										<button type="button" id="buttonSend" class="button btn btn-success btn-lg" >发送</button>
 									</fieldset>
 								</form>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6">
-							<div class="box-content">
-								<h3 class="widget-title">预留板块</h3>
-								<p>1.展示留言信息</p>
-								<p>2.reids+mysql </p>
-								<div class="about-social">
-									<ul>
-										<li><a href="https://github.com/StarrySkyYJ" class="fa fa-github" title="github.com" target="_blank"></a></li>
-										<li><a href="https://blog.csdn.net/StarryaSky" class="fa fa-copyright"  title="CSDN.com" target="_blank"></a></li>
-										<li><a href="#" class="fa fa-envelope" title="Email" ></a></li>
-										<li><a href="https://starryskyyj.github.io/space.github.io/" class="fa fa-github-alt" title="github.io"></a></li>
-									</ul>
+							<div class="box-content " >
+								<h3 class="widget-title">留言板块</h3>
+								<div class="column" style="border-bottom:1px dashed #000; margin-bottom:2px ;line-height:15px">
+									<div class="row" >
+										<div class="col-md-6"><small>1. </small>昵称</div>
+										<div class="col-md-6 small">标题</div>
+									</div>
+									<div>内容内容内容内容内容内容内容内容内容内容内容内容</div>
+									<div><p class="text-right small">时间</p></div>
+								</div>
+								
+								
+								
+								
+								
+								<div class="about-social" style="margin-top:-10px;margin-bottom:-40px" >
+									<nav aria-label="Page navigation">
+									  <ul class="pagination" >
+										<li>
+										  <a href="#" aria-label="Previous">
+											<span aria-hidden="true">&laquo;</span>
+										  </a>
+										</li>
+										<li><a href="#">1</a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>		
+										<li>
+										  <a href="#" aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+										  </a>
+										</li>
+									  </ul>
+									</nav>
 								</div>
 							</div>
 						</div>
@@ -365,6 +387,43 @@
 			 $(this).attr("title","点击继续播放") ;
         }
 	});
+	
+	//留言版发送按钮绑定事件
+	$("#buttonSend").on('click',function(){
+		console.log("发送留言") ;
+		
+		$.ajax({
+			url:"http://localhost/message/getMessage",
+			type:"POST",
+			data:$("#sendForm").serialize(),
+			dataType:'json' ,
+			success:function(res){
+				console.log("结果："+res);
+				console.log("结果："+res[0]);
+				
+			}			
+		});
+	});
+	
+	//页面加载完成直接获取数据
+	$(function(){
+		getAllMessage();
+	});
+	//获取redis中的所有数据;
+	function getAllMessage(){
+		$.ajax({
+			url:"http://localhost/message/getAllMessage" ,
+			type:"GET" ,
+			dataType:'json' ,
+			success:function(res){
+				console.log("获取所有结果"+res.message);
+				console.log("结果："+res.message[0]);
+			}
+		});
+	}
+	
+	
+	
 </script>
 </body>
 </html>
