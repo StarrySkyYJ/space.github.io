@@ -393,7 +393,7 @@
 		console.log("发送留言") ;
 		
 		$.ajax({
-			url:"http://localhost/message/getMessage",
+			url:"http://39.108.216.235:8081/BlogSystem/message/getMessage",
 			type:"POST",
 			data:$("#sendForm").serialize(),
 			dataType:'json' ,
@@ -412,7 +412,7 @@
 	//获取redis中的所有数据;
 	function getAllMessage(){
 		$.ajax({
-			url:"http://localhost/message/getAllMessage" ,
+			url:"http://39.108.216.235:8081/BlogSystem/message/getAllMessage" ,
 			type:"GET" ,
 			dataType:'json' ,
 			success:function(res){
