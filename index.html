@@ -205,54 +205,34 @@
 					<div class="box-content">
 						<h3 class="widget-title">项目</h3>
 						<div class="row">
+
 							<div class="col-md-4 col-sm-6 col-xs-12">
 								<div class="project-item">
-									<img id="images1" src="images/1.jpg" alt="">
+									<img id="project-1-ssm" src="images/project/loading-1.jpg" alt="">
 									<div class="project-hover">
-										<h4>1. SSM 员工管理系统</h4>
+										<h4>1. 正在开发中...</h4>
 									</div>
 								</div>
 							</div>
-							<!-- <div class="col-md-4 col-sm-6 col-xs-12"> -->
-								<!-- <div class="project-item"> -->
-									<!-- <img  src="images/2.jpg" alt="ssm-crud" href="http://39.108.216.235:8081/ssm-crud/"> -->
-									<!-- <div class="project-hover"> -->
-										<!-- <h4>Another Image Caption</h4> -->
-									<!-- </div> -->
-								<!-- </div> -->
-							<!-- </div> -->
-							<!-- <div class="col-md-4 col-sm-6 col-xs-12"> -->
-								<!-- <div class="project-item"> -->
-									<!-- <img src="images/3.jpg" alt=""> -->
-									<!-- <div class="project-hover"> -->
-										<!-- <h4>Great Nature Capture</h4> -->
-									<!-- </div> -->
-								<!-- </div> -->
-							<!-- </div> -->
-							<!-- <div class="col-md-4 col-sm-6 col-xs-12"> -->
-								<!-- <div class="project-item"> -->
-									<!-- <img src="images/4.jpg" alt=""> -->
-									<!-- <div class="project-hover"> -->
-										<!-- <h4>Another Image Caption</h4> -->
-									<!-- </div> -->
-								<!-- </div> -->
-							<!-- </div> -->
-							<!-- <div class="col-md-4 col-sm-6 col-xs-12"> -->
-								<!-- <div class="project-item"> -->
-									<!-- <img src="images/5.jpg" alt=""> -->
-									<!-- <div class="project-hover"> -->
-										<!-- <h4>Great Nature Capture</h4> -->
-									<!-- </div> -->
-								<!-- </div> -->
-							<!-- </div> -->
-							<!-- <div class="col-md-4 col-sm-6 col-xs-12"> -->
-								<!-- <div class="project-item"> -->
-									<!-- <img src="images/6.jpg" alt=""> -->
-									<!-- <div class="project-hover"> -->
-										<!-- <h4>Another Image Caption</h4> -->
-									<!-- </div> -->
-								<!-- </div> -->
-							<!-- </div> -->
+
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<div class="project-item">
+									<img id="project-2-ssm" src="images/project/project-2-ssm.jpg" alt="">
+									<div class="project-hover">
+										<h4>2. SSM 员工管理系统</h4>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<div class="project-item">
+									<img id="project-3-ssh" src="images/project/project-3-ssh.jpg" alt="">
+									<div class="project-hover">
+										<h4>3. SSH E淘商城</h4>
+									</div>
+								</div>
+							</div>
+							
 						</div>
 						<div class="project-pages">
 							<!-- <ul> -->
@@ -390,9 +370,14 @@
         }
 	});
 	
-	//项目一 跳转链接
-	$("#images1").on('click',function(){
+	//项目二 跳转链接
+	$("#project-2-ssm").on('click',function(){
 		window.open("http://39.108.216.235:8081/ssm-crud/");
+	});
+
+	//项目三 跳转链接
+	$("#project-3-ssh").on('click',function(){
+		window.open("http://39.108.216.235:8081/ssh_etao/index.action");
 	});
 	
 	//留言版发送按钮绑定事件
