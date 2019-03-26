@@ -208,9 +208,18 @@
 
 							<div class="col-md-4 col-sm-6 col-xs-12">
 								<div class="project-item">
-									<img id="project-1-ssm" src="images/project/loading-1.jpg" alt="">
+									<img id="project-1-ssm-1" src="images/project/project-1-ssm-1.jpg" alt="">
 									<div class="project-hover">
-										<h4>1. 正在开发中...</h4>
+										<h4>1. springboot 博客系统(前端)</h4>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<div class="project-item">
+									<img id="project-1-ssm-2" src="images/project/project-1-ssm-2.jpg" alt="">
+									<div class="project-hover">
+										<h4>1. springboot 博客系统(后端管理)</h4>
 									</div>
 								</div>
 							</div>
@@ -370,6 +379,16 @@
         }
 	});
 	
+	//项目一 跳转链接 前端
+	$("#project-1-ssm-1").on('click',function(){
+		window.open("http://39.108.216.235:8081/blog/index/");
+	});
+
+	//项目一 跳转链接 后端管理
+	$("#project-1-ssm-2").on('click',function(){
+		window.open("http://39.108.216.235:8081/blog/admins/login/login");
+	});
+
 	//项目二 跳转链接
 	$("#project-2-ssm").on('click',function(){
 		window.open("http://39.108.216.235:8081/ssm-crud/");
