@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 <meta charset="utf-8">
@@ -18,13 +15,8 @@
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-<!--[if lt IE 7]>
-	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
-
 <div class="site-bg"></div>
 <div class="site-bg-overlay"></div>
-
 
 <!-- TOP HEADER -->
 <div class="top-header">
@@ -47,7 +39,6 @@
 		</div>
 	</div>
 </div> <!-- .top-header -->
-
 
 <div class="visible-xs visible-sm responsive-menu">
 	<a href="#" class="toggle-menu">
@@ -73,8 +64,6 @@
 <div class="copyrights">Collect from <a href="http://www.mycodes.net" >免费模板</a></div>
 <div class="container" id="page-content">
 	<div class="row">
-
-
 		
 		<div class="col-md-9 col-sm-12 content-holder">
 			<!-- CONTENT -->
@@ -82,8 +71,7 @@
 				
 				<div class="logo-holder logo-top-margin">
 					<a href="#" class="site-brand"><img src="images/logo.png" alt=""></a>
-				</div>
-				
+				</div>				
 				
 				<div id="menu-1" class="homepage home-section text-center">
 					<div class="welcome-text" >
@@ -101,17 +89,7 @@
 						<div class="row">
 							<div>&nbsp</div>
 						</div>
-						<!-- <form action="#" method="get" class="subscribe-form">
-							<div class="row">
-								<fieldset class="col-md-offset-2 col-md-6">
-									<input name="subscribe-email" type="email" class="email" id="subscribe-email" placeholder="Write your email here..">
-								</fieldset>
-								<fieldset class="col-md-4 button-holder">
-									<input name="submit" type="submit" class="button default" id="submit" value="Submit">
-								</fieldset>
-							</div>
-							<p class="subscribe-text">Please subscribe your email for latest updates!</p>
-						</form> -->
+						
 					</div>
 				</div>
 				
@@ -289,11 +267,7 @@
 									</div>
 									<div>需要https安全域名+ssl认证；（预留）</div>
 									<div><p class="text-right small">时间</p></div>
-								</div>
-								
-								
-								
-								
+								</div>								
 								
 								<div class="about-social" style="margin-top:-10px;margin-bottom:-40px" >
 									<nav aria-label="Page navigation">
@@ -322,9 +296,7 @@
 			</div>
 		</div>
 
-
-		<div class="col-md-3 hidden-sm">
-			
+		<div class="col-md-3 hidden-sm">			
 			<nav id="nav" class="main-navigation hidden-xs hidden-sm">
 				<ul class="main-menu">
 					<li>
@@ -399,39 +371,39 @@
 		window.open("http://39.108.216.235:8081/ssh_etao/index.action");
 	});
 	
-	//留言版发送按钮绑定事件
-	$("#buttonSend").on('click',function(){
-		console.log("发送留言") ;
+	// //留言版发送按钮绑定事件
+	// $("#buttonSend").on('click',function(){
+	// 	console.log("发送留言") ;
 		
-		$.ajax({
-			url:"http://39.108.216.235:8081/BlogSystem/message/getMessage",
-			type:"POST",
-			data:$("#sendForm").serialize(),
-			dataType:'json' ,
-			success:function(res){
-				console.log("结果："+res);
-				console.log("结果："+res[0]);
+	// 	$.ajax({
+	// 		url:"http://39.108.216.235:8081/BlogSystem/message/getMessage",
+	// 		type:"POST",
+	// 		data:$("#sendForm").serialize(),
+	// 		dataType:'json' ,
+	// 		success:function(res){
+	// 			console.log("结果："+res);
+	// 			console.log("结果："+res[0]);
 				
-			}			
-		});
-	});
+	// 		}			
+	// 	});
+	// });
 	
-	//页面加载完成直接获取数据
-	$(function(){
+	// //页面加载完成直接获取数据
+	// $(function(){
 		
-	});
+	// });
 	//获取redis中的所有数据;
-	function getAllMessage(){
-		$.ajax({
-			url:"http://39.108.216.235:8081/BlogSystem/message/getAllMessage" ,
-			type:"GET" ,
-			dataType:'json' ,
-			success:function(res){
-				console.log("获取所有结果"+res.message);
-				console.log("结果："+res.message[0]);
-			}
-		});
-	}
+	// function getAllMessage(){
+	// 	$.ajax({
+	// 		url:"http://39.108.216.235:8081/BlogSystem/message/getAllMessage" ,
+	// 		type:"GET" ,
+	// 		dataType:'json' ,
+	// 		success:function(res){
+	// 			console.log("获取所有结果"+res.message);
+	// 			console.log("结果："+res.message[0]);
+	// 		}
+	// 	});
+	// }
 	
 	
 	
